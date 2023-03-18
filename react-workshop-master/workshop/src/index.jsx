@@ -1,7 +1,7 @@
 import '../assets/stylesheets/application.scss';
 
 import React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom/client';
 
 import App from './components/App'; // need to import App to be able to use the app component in index.jsx
 

@@ -3,15 +3,32 @@ import Gif from "./Gif";
 import GifList from "./GifList";
 import SearchBar from "./SearchBar";
 
+const giphy = require('giphy-api')({
+  apiKey: 'KsltJNEs1v3QDDVlinP6EFo2GqjFxgRR',
+  https: true
+});
+
 const App = () => {
   // const gifIds = ["WuGSL4LFUMQU", "HuVCpmfKheI2Q", "u6uAu3yyDNqRq"];
   // const selectedGifId = "13HgwGsXF0aiGY";
   const [selectedGifId, setSelectedGifId] = useState("13HgwGsXF0aiGY");
   const [gifIds, setGifIds] = useState(["WuGSL4LFUMQU", "HuVCpmfKheI2Q", "u6uAu3yyDNqRq"]);
+
+  const searchGifs = (keyword) => {
+    giphy.search({
+      q: keyword,
+      rating: 'g',
+      limit: 10
+    }, (err, res) => {
+      const ids = res.data.map((gif) => gif.id);
+      setGifIds(ids);
+    });
+  };
+
   return (
     <div>
       <div className="left-scene">
-        <SearchBar />
+        <SearchBar searchGifs={searchGifs} />
         <div className="selected-gif">
           <Gif gifId={selectedGifId} />
         </div>
@@ -24,3 +41,10 @@ const App = () => {
 };
 
 export default App; // exporting the app to the index.jsx
+
+// 1. figure out what your components are
+// 2. create the skeleton of each of the components, render the app components
+// according to validateSchema
+// 3. to customize add props, to dynamize store into state the value that is
+// gong to change , and listening to an event and then change the state
+// components, props, states
