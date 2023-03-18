@@ -1,14 +1,12 @@
 import React from 'react';
 import Gif from './Gif';
 
-const GifList = () => {
+const GifList = (props) => {
+  const { gifIds } = props;
   return (
     <div>
       <div className="gif-list">
-        <Gif />
-        <Gif />
-        <Gif />
-        <Gif />
+        { gifIds.map((gifId) => <Gif gifId={gifId} key={gifId} />) }
       </div>
     </div>
   );

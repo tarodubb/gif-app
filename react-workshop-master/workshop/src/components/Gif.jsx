@@ -1,10 +1,10 @@
 import React from 'react'; // rsc is the shortcut for generating a react stateless component
 
-const Gif = () => {
+const Gif = (props) => {
+  const { gifId } = props;
+  const url = `https://media.giphy.com/media/${gifId}/giphy.gif`; // javascript variable
   return (
-    <div>
-      <img className="gif" src="https://media.giphy.com/media/gG6OcTSRWaSis/giphy.gif" alt="" />
-    </div>
+    <img className="gif" src={url} alt="gif" />
   );
 };
 
