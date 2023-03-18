@@ -8,7 +8,9 @@ const App = () => {
     <div>
       <div className="left-scene">
         <SearchBar />
-        <Gif />
+        <div className="selected-gif">
+          <Gif />
+        </div>
       </div>
       <div className="right-scene">
         <GifList />

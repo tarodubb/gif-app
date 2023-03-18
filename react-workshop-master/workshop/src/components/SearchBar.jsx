@@ -3,7 +3,7 @@ import React from 'react';
 const SearchBar = () => {
   return (
     <div>
-      Search Bar
+      <input type="text" className="form-search form-control" />
     </div>
   );
 };
