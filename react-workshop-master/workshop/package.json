@@ -1,4 +1,5 @@
 {
+  "homepage": "http://tarodubb.github.io/gif-app",
   "license": "UNLICENSED",
   "devDependencies": {
     "@babel/cli": "^7.1.5",
@@ -18,7 +19,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
-    "gh-pages": "^3.1.0",
+    "gh-pages": "^5.0.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "node-sass": "^7.0.0",
@@ -35,6 +36,8 @@
   },
   "scripts": {
     "start": "webpack-cli serve --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint": "eslint './src/**/*.js*'",
     "create-gh-pages": "git branch gh-pages -f && git push origin gh-pages -f && gh-pages -d dist && gh repo view -w",
     "deploy": "webpack && yarn create-gh-pages"
