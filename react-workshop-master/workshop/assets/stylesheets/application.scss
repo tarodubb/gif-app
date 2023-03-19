@@ -82,13 +82,22 @@ body {
   color: red;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 980px) {
   #root > div {
     display:flex;
     flex-direction: column;
   }
 
   .left-scene .selected-gif{
-    height: calc(100vh - 400px);
+    width: 100%;
+    height: 800px;
+  }
+
+  .selected-gif{
+    .gif{
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
   }
 }

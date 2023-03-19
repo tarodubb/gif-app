@@ -71,3 +71,14 @@ body {
 .clicked {
   color: red;
 }
+
+@media (max-width: 980px) {
+  #root > div {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .left-scene .selected-gif{
+    height: calc(100vh - 400px);
+  }
+}
